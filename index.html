@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080d18">
+    <title>KURION OS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="boot-screen">
+        <div class="boot-logo">K</div>
+        <h1>KURION</h1>
+        <p>THREE MINDS. ONE SYSTEM.</p>
+        <div class="boot-loader"></div>
+        <span>INITIALIZING SYSTEM...</span>
+    </div>
+
+    <main id="desktop">
+
+        <header class="topbar">
+            <div class="brand">KURION <span>OS</span></div>
+            <div id="clock">00:00</div>
+            <div class="system-status">SYSTEM ONLINE</div>
+        </header>
+
+        <section class="welcome">
+            <p>PERSONAL ARTIFICIAL INTELLIGENCE SYSTEM</p>
+            <h1>Welcome back, Kürşat.</h1>
+            <p id="assistant-message">
+                Sisteminiz kullanıma hazır.
+            </p>
+        </section>
+
+        <section class="assistant-selection">
+
+            <button class="assistant jarvis active"
+                onclick="changeAssistant('jarvis')">
+                <span>🔵</span>
+                <h2>JARVIS</h2>
+                <p>Intelligent Assistant</p>
+            </button>
+
+            <button class="assistant ultron"
+                onclick="changeAssistant('ultron')">
+                <span>🔴</span>
+                <h2>ULTRON</h2>
+                <p>Independent Intelligence</p>
+            </button>
+
+            <button class="assistant friday"
+                onclick="changeAssistant('friday')">
+                <span>🟠</span>
+                <h2>FRIDAY</h2>
+                <p>Advanced Assistant</p>
+            </button>
+
+        </section>
+
+        <section class="assistant-panel">
+            <div id="assistant-name">JARVIS</div>
+            <p id="assistant-description">
+                Size nasıl yardımcı olabilirim efendim?
+            </p>
+        </section>
+
+        <footer>
+            KURION OS © 2026 | CREATED BY KÜRŞAT
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

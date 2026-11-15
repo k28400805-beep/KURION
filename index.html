@@ -4,74 +4,813 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#080d18">
-    <title>KURION OS</title>
+    <meta name="theme-color" content="#080d19">
+    <meta name="description" content="KURİON OS - Üç zekâ, tek sistem.">
+    <title>KURİON OS</title>
+
+    <!-- Yazı tipleri -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tasarım dosyası -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <div id="boot-screen">
-        <div class="boot-logo">K</div>
-        <h1>KURION</h1>
-        <p>THREE MINDS. ONE SYSTEM.</p>
-        <div class="boot-loader"></div>
-        <span>INITIALIZING SYSTEM...</span>
+    <!-- =====================================
+         1. AÇILIŞ EKRANI
+    ====================================== -->
+
+    <div id="boot-screen" class="boot-screen">
+        <div class="boot-content">
+            <div class="boot-logo">K</div>
+
+            <h1>KURİON<span> OS</span></h1>
+            <p class="boot-slogan">ÜÇ ZEKÂ. TEK SİSTEM.</p>
+
+            <div class="boot-loader">
+                <div id="boot-progress"></div>
+            </div>
+
+            <p id="boot-status">Sistem başlatılıyor...</p>
+        </div>
+
+        <div class="boot-version">KURİON OS • PERSONAL EDITION</div>
     </div>
 
-    <main id="desktop">
+
+    <!-- =====================================
+         2. MASAÜSTÜ
+    ====================================== -->
+
+    <main id="desktop" class="desktop" data-theme="jarvis">
+
+        <!-- ÜST BİLGİ ÇUBUĞU -->
 
         <header class="topbar">
-            <div class="brand">KURION <span>OS</span></div>
-            <div id="clock">00:00</div>
-            <div class="system-status">SYSTEM ONLINE</div>
+
+            <div class="topbar-left">
+                <div class="mini-logo">K</div>
+                <span class="system-name">KURİON</span>
+                <span class="system-version">OS 1.0</span>
+            </div>
+
+            <div class="topbar-center">
+                <span class="system-indicator"></span>
+                <span id="system-status">SİSTEM AKTİF</span>
+            </div>
+
+            <div class="topbar-right">
+                <span id="network-status">◉ Çevrimiçi</span>
+                <span id="topbar-date">15 Kasım 2026</span>
+                <span id="topbar-clock">14:40</span>
+                <button class="topbar-power" data-action="power" title="Güç menüsü">⏻</button>
+            </div>
+
         </header>
 
-        <section class="welcome">
-            <p>PERSONAL ARTIFICIAL INTELLIGENCE SYSTEM</p>
-            <h1>Welcome back, Kürşat.</h1>
-            <p id="assistant-message">
-                Sisteminiz kullanıma hazır.
-            </p>
+
+        <!-- MASAÜSTÜ İÇERİĞİ -->
+
+        <section class="desktop-content">
+
+            <!-- MASAÜSTÜ İKONLARI -->
+
+            <nav class="desktop-icons" aria-label="Masaüstü uygulamaları">
+
+                <button class="desktop-icon" data-open="assistant">
+                    <span class="desktop-icon-image">✧</span>
+                    <span>KURİON AI</span>
+                </button>
+
+                <button class="desktop-icon" data-open="files">
+                    <span class="desktop-icon-image">📁</span>
+                    <span>Dosyalarım</span>
+                </button>
+
+                <button class="desktop-icon" data-open="terminal">
+                    <span class="desktop-icon-image">⌘</span>
+                    <span>Terminal</span>
+                </button>
+
+                <button class="desktop-icon" data-open="notes">
+                    <span class="desktop-icon-image">📝</span>
+                    <span>Notlar</span>
+                </button>
+
+                <button class="desktop-icon" data-open="settings">
+                    <span class="desktop-icon-image">⚙</span>
+                    <span>Ayarlar</span>
+                </button>
+
+                <button class="desktop-icon" data-open="about">
+                    <span class="desktop-icon-image">ⓘ</span>
+                    <span>Hakkında</span>
+                </button>
+
+            </nav>
+
+
+            <!-- KARŞILAMA ALANI -->
+
+            <section class="welcome-area">
+
+                <div class="welcome-label">
+                    <span class="welcome-dot"></span>
+                    KURİON PERSONAL ENVIRONMENT
+                </div>
+
+                <h1>Hoş geldin.</h1>
+
+                <p class="welcome-description">
+                    Geleceğin masaüstü deneyimine hazır mısın?
+                    Kontrol artık sende.
+                </p>
+
+                <div class="welcome-time">
+                    <span id="desktop-clock">14:40</span>
+                    <span id="desktop-date">15 Kasım 2026</span>
+                </div>
+
+                <button class="primary-button" data-open="assistant">
+                    <span>✧</span>
+                    Yapay zekâ merkezini aç
+                    <span>→</span>
+                </button>
+
+            </section>
+
+
+            <!-- SAĞ BİLGİ PANELİ -->
+
+            <aside class="system-widget">
+
+                <div class="widget-header">
+                    <div>
+                        <span class="widget-eyebrow">SİSTEM PANELİ</span>
+                        <h3>Kontrol merkezi</h3>
+                    </div>
+                    <span class="widget-status">● AKTİF</span>
+                </div>
+
+                <div class="widget-divider"></div>
+
+                <div class="widget-row">
+                    <span>İşletim sistemi</span>
+                    <strong>KURİON OS</strong>
+                </div>
+
+                <div class="widget-row">
+                    <span>Aktif asistan</span>
+                    <strong id="widget-assistant">JARVIS</strong>
+                </div>
+
+                <div class="widget-row">
+                    <span>Arayüz dili</span>
+                    <strong>Türkçe</strong>
+                </div>
+
+                <div class="widget-row">
+                    <span>Sürüm</span>
+                    <strong>1.0.0</strong>
+                </div>
+
+                <div class="widget-divider"></div>
+
+                <div class="widget-footer">
+                    <span class="widget-orb"></span>
+                    <span>Tüm sistemler çalışıyor</span>
+                </div>
+
+            </aside>
+
+
+            <!-- YAPAY ZEKÂ SEÇİMİ -->
+
+            <section class="ai-selection">
+
+                <div class="section-heading">
+                    <div>
+                        <span class="section-eyebrow">YAPAY ZEKÂ EKİBİ</span>
+                        <h2>Asistanını seç.</h2>
+                    </div>
+
+                    <span class="section-note">3 ZEKÂ • 1 SİSTEM</span>
+                </div>
+
+
+                <div class="ai-cards">
+
+                    <!-- JARVIS -->
+
+                    <button class="ai-card jarvis-card active"
+                            data-assistant="jarvis">
+
+                        <div class="ai-card-top">
+                            <span class="ai-symbol">J</span>
+                            <span class="ai-online">● ÇEVRİMİÇİ</span>
+                        </div>
+
+                        <h3>J.A.R.V.I.S.</h3>
+
+                        <p>
+                            Kibar, güvenilir ve çözüm odaklı.
+                            Her zaman yardıma hazır.
+                        </p>
+
+                        <span class="ai-card-link">Asistanı seç →</span>
+
+                    </button>
+
+
+                    <!-- ULTRON -->
+
+                    <button class="ai-card ultron-card"
+                            data-assistant="ultron">
+
+                        <div class="ai-card-top">
+                            <span class="ai-symbol">U</span>
+                            <span class="ai-online">● ÇEVRİMİÇİ</span>
+                        </div>
+
+                        <h3>ULTRON</h3>
+
+                        <p>
+                            Sorgulayan, eleştirel ve bağımsız
+                            düşünceye sahip.
+                        </p>
+
+                        <span class="ai-card-link">Asistanı seç →</span>
+
+                    </button>
+
+
+                    <!-- FRIDAY -->
+
+                    <button class="ai-card friday-card"
+                            data-assistant="friday">
+
+                        <div class="ai-card-top">
+                            <span class="ai-symbol">F</span>
+                            <span class="ai-online">● ÇEVRİMİÇİ</span>
+                        </div>
+
+                        <h3>F.R.I.D.A.Y.</h3>
+
+                        <p>
+                            Hızlı, modern, analitik ve
+                            profesyonel.
+                        </p>
+
+                        <span class="ai-card-link">Asistanı seç →</span>
+
+                    </button>
+
+                </div>
+
+            </section>
+
         </section>
 
-        <section class="assistant-selection">
 
-            <button class="assistant jarvis active"
-                onclick="changeAssistant('jarvis')">
-                <span>🔵</span>
-                <h2>JARVIS</h2>
-                <p>Intelligent Assistant</p>
-            </button>
+        <!-- =====================================
+             3. UYGULAMA PENCERELERİ
+        ====================================== -->
 
-            <button class="assistant ultron"
-                onclick="changeAssistant('ultron')">
-                <span>🔴</span>
-                <h2>ULTRON</h2>
-                <p>Independent Intelligence</p>
-            </button>
+        <div id="window-layer" class="window-layer">
 
-            <button class="assistant friday"
-                onclick="changeAssistant('friday')">
-                <span>🟠</span>
-                <h2>FRIDAY</h2>
-                <p>Advanced Assistant</p>
-            </button>
 
-        </section>
+            <!-- YAPAY ZEKÂ MERKEZİ -->
 
-        <section class="assistant-panel">
-            <div id="assistant-name">JARVIS</div>
-            <p id="assistant-description">
-                Size nasıl yardımcı olabilirim efendim?
-            </p>
-        </section>
+            <section class="app-window assistant-window"
+                     id="window-assistant"
+                     data-window="assistant"
+                     hidden>
 
-        <footer>
-            KURION OS © 2026 | CREATED BY KÜRŞAT
+                <header class="window-titlebar">
+                    <div class="window-title">
+                        <span class="window-app-icon">✧</span>
+                        <span>KURİON AI CENTER</span>
+                    </div>
+
+                    <div class="window-controls">
+                        <button data-minimize title="Küçült">—</button>
+                        <button data-maximize title="Büyüt">□</button>
+                        <button data-close title="Kapat">×</button>
+                    </div>
+                </header>
+
+
+                <div class="assistant-layout">
+
+                    <!-- ASİSTAN BİLGİSİ -->
+
+                    <aside class="assistant-sidebar">
+
+                        <div class="assistant-profile">
+
+                            <div class="assistant-avatar" id="assistant-avatar">
+                                J
+                            </div>
+
+                            <span class="assistant-online">
+                                ● SİSTEME BAĞLI
+                            </span>
+
+                            <h2 id="assistant-name">J.A.R.V.I.S.</h2>
+
+                            <p id="assistant-description">
+                                Size nasıl yardımcı olabilirim?
+                            </p>
+
+                        </div>
+
+
+                        <div class="sidebar-divider"></div>
+
+                        <span class="sidebar-label">ASİSTANLAR</span>
+
+                        <button class="sidebar-ai active"
+                                data-assistant="jarvis">
+                            <span class="sidebar-ai-dot jarvis-dot"></span>
+                            JARVIS
+                        </button>
+
+                        <button class="sidebar-ai"
+                                data-assistant="ultron">
+                            <span class="sidebar-ai-dot ultron-dot"></span>
+                            ULTRON
+                        </button>
+
+                        <button class="sidebar-ai"
+                                data-assistant="friday">
+                            <span class="sidebar-ai-dot friday-dot"></span>
+                            FRIDAY
+                        </button>
+
+
+                        <div class="sidebar-bottom">
+                            <span>ÇALIŞMA MODU</span>
+                            <strong id="assistant-mode">Standart</strong>
+                        </div>
+
+                    </aside>
+
+
+                    <!-- SOHBET ALANI -->
+
+                    <div class="chat-area">
+
+                        <div class="chat-header">
+                            <div>
+                                <span class="chat-eyebrow">GÜVENLİ BAĞLANTI</span>
+                                <h3>Asistan sohbeti</h3>
+                            </div>
+
+                            <button id="clear-chat" class="icon-button"
+                                    title="Sohbeti temizle">
+                                ↻
+                            </button>
+                        </div>
+
+
+                        <div id="chat-messages" class="chat-messages"
+                             aria-live="polite">
+
+                            <div class="message assistant-message">
+                                <div class="message-avatar">J</div>
+
+                                <div class="message-content">
+                                    <span class="message-author">JARVIS</span>
+                                    <p>
+                                        Sistem hazır. Size nasıl yardımcı
+                                        olabilirim?
+                                    </p>
+                                    <span class="message-time">Şimdi</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- ÖNERİLEN KOMUTLAR -->
+
+                        <div class="quick-prompts">
+                            <button data-prompt="Kendini tanıtır mısın?">
+                                Kendini tanıt
+                            </button>
+
+                            <button data-prompt="Bugün bana yardımcı ol.">
+                                Bana yardımcı ol
+                            </button>
+
+                            <button data-prompt="Sistem durumu nedir?">
+                                Sistem durumu
+                            </button>
+                        </div>
+
+
+                        <!-- MESAJ GÖNDERME -->
+
+                        <form id="chat-form" class="chat-input-area">
+
+                            <button type="button"
+                                    id="microphone-button"
+                                    class="voice-button"
+                                    title="Mikrofonu aç"
+                                    aria-label="Mikrofonu aç">
+                                🎙
+                            </button>
+
+                            <input
+                                type="text"
+                                id="chat-input"
+                                placeholder="Asistanına bir şey sor..."
+                                autocomplete="off"
+                                maxlength="2000"
+                            >
+
+                            <button type="button"
+                                    id="speak-button"
+                                    class="voice-output-button"
+                                    title="Sesli yanıtı aç veya kapat">
+                                🔊
+                            </button>
+
+                            <button type="submit"
+                                    id="send-button"
+                                    class="send-button"
+                                    aria-label="Mesaj gönder">
+                                ➤
+                            </button>
+
+                        </form>
+
+                        <div class="chat-footer">
+                            <span id="voice-status">
+                                Mikrofon hazır değil
+                            </span>
+                            <span>ENTER ile gönder</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- DOSYA YÖNETİCİSİ -->
+
+            <section class="app-window"
+                     id="window-files"
+                     data-window="files"
+                     hidden>
+
+                <header class="window-titlebar">
+                    <div class="window-title">
+                        <span class="window-app-icon">📁</span>
+                        <span>DOSYA YÖNETİCİSİ</span>
+                    </div>
+
+                    <div class="window-controls">
+                        <button data-minimize>—</button>
+                        <button data-maximize>□</button>
+                        <button data-close>×</button>
+                    </div>
+                </header>
+
+                <div class="file-manager">
+
+                    <aside class="file-sidebar">
+                        <span class="sidebar-label">KONUM</span>
+                        <button class="file-location active">⌂ Ana sayfa</button>
+                        <button class="file-location">▣ Belgeler</button>
+                        <button class="file-location">▧ Görseller</button>
+                        <button class="file-location">♫ Ses dosyaları</button>
+                    </aside>
+
+                    <div class="file-content">
+                        <div class="file-heading">
+                            <h2>Dosyalarım</h2>
+                            <span>Bu alan yerel dosya depolaması değildir.</span>
+                        </div>
+
+                        <div class="file-grid">
+                            <div class="file-item">
+                                <span>📁</span>
+                                <p>Belgeler</p>
+                            </div>
+
+                            <div class="file-item">
+                                <span>🖼️</span>
+                                <p>Görseller</p>
+                            </div>
+
+                            <div class="file-item">
+                                <span>🎵</span>
+                                <p>Sesler</p>
+                            </div>
+
+                            <div class="file-item">
+                                <span>⚙️</span>
+                                <p>Sistem</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- TERMİNAL -->
+
+            <section class="app-window terminal-window"
+                     id="window-terminal"
+                     data-window="terminal"
+                     hidden>
+
+                <header class="window-titlebar">
+                    <div class="window-title">
+                        <span class="window-app-icon">⌘</span>
+                        <span>KURİON TERMINAL</span>
+                    </div>
+
+                    <div class="window-controls">
+                        <button data-minimize>—</button>
+                        <button data-maximize>□</button>
+                        <button data-close>×</button>
+                    </div>
+                </header>
+
+                <div class="terminal-content">
+
+                    <div id="terminal-output" class="terminal-output">
+                        <p>KURİON OS Terminal [Sürüm 1.0.0]</p>
+                        <p>Türkçe komut sistemine hoş geldiniz.</p>
+                        <p>Komutları görmek için <strong>help</strong> yazın.</p>
+                    </div>
+
+                    <form id="terminal-form" class="terminal-input-line">
+                        <label for="terminal-input">KURION &gt;</label>
+                        <input id="terminal-input"
+                               type="text"
+                               autocomplete="off"
+                               spellcheck="false">
+                    </form>
+
+                </div>
+
+            </section>
+
+
+            <!-- NOTLAR -->
+
+            <section class="app-window"
+                     id="window-notes"
+                     data-window="notes"
+                     hidden>
+
+                <header class="window-titlebar">
+                    <div class="window-title">
+                        <span class="window-app-icon">📝</span>
+                        <span>NOTLAR</span>
+                    </div>
+
+                    <div class="window-controls">
+                        <button data-minimize>—</button>
+                        <button data-maximize>□</button>
+                        <button data-close>×</button>
+                    </div>
+                </header>
+
+                <div class="notes-content">
+                    <div class="notes-toolbar">
+                        <h2>Benim notlarım</h2>
+                        <span id="notes-save-status">Hazır</span>
+                    </div>
+
+                    <input id="notes-title"
+                           type="text"
+                           placeholder="Not başlığı">
+
+                    <textarea id="notes-text"
+                              placeholder="Buraya notlarını yazabilirsin..."></textarea>
+                </div>
+
+            </section>
+
+
+            <!-- AYARLAR -->
+
+            <section class="app-window"
+                     id="window-settings"
+                     data-window="settings"
+                     hidden>
+
+                <header class="window-titlebar">
+                    <div class="window-title">
+                        <span class="window-app-icon">⚙</span>
+                        <span>SİSTEM AYARLARI</span>
+                    </div>
+
+                    <div class="window-controls">
+                        <button data-minimize>—</button>
+                        <button data-maximize>□</button>
+                        <button data-close>×</button>
+                    </div>
+                </header>
+
+                <div class="settings-content">
+
+                    <h2>Ayarlar</h2>
+                    <p>KURİON deneyimini kendine göre düzenle.</p>
+
+                    <div class="setting-group">
+                        <h3>Görünüm</h3>
+
+                        <label for="wallpaper-select">Masaüstü teması</label>
+
+                        <select id="wallpaper-select">
+                            <option value="jarvis">JARVIS - Mavi</option>
+                            <option value="ultron">ULTRON - Kırmızı</option>
+                            <option value="friday">FRIDAY - Turuncu</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-group">
+                        <h3>Ses</h3>
+
+                        <label class="setting-switch">
+                            <span>Sesli yanıtlar</span>
+                            <input type="checkbox" id="voice-enabled" checked>
+                        </label>
+
+                        <label class="setting-switch">
+                            <span>Arayüz sesleri</span>
+                            <input type="checkbox" id="interface-sounds" checked>
+                        </label>
+                    </div>
+
+                    <div class="setting-group">
+                        <h3>Sistem</h3>
+                        <p>KURİON OS 1.0.0</p>
+                        <p>ÜÇ ZEKÂ. TEK SİSTEM.</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- HAKKINDA -->
+
+            <section class="app-window"
+                     id="window-about"
+                     data-window="about"
+                     hidden>
+
+                <header class="window-titlebar">
+                    <div class="window-title">
+                        <span class="window-app-icon">ⓘ</span>
+                        <span>KURİON HAKKINDA</span>
+                    </div>
+
+                    <div class="window-controls">
+                        <button data-minimize>—</button>
+                        <button data-maximize>□</button>
+                        <button data-close>×</button>
+                    </div>
+                </header>
+
+                <div class="about-content">
+                    <div class="about-logo">K</div>
+                    <h1>KURİON OS</h1>
+                    <p class="about-slogan">ÜÇ ZEKÂ. TEK SİSTEM.</p>
+
+                    <p>
+                        JARVIS, ULTRON ve FRIDAY'i tek bir masaüstü
+                        deneyiminde buluşturan kişisel sistem.
+                    </p>
+
+                    <div class="about-version">SÜRÜM 1.0.0</div>
+                    <div class="about-credit">Created by Kürşat</div>
+                </div>
+
+            </section>
+
+
+            <!-- GÜÇ MENÜSÜ -->
+
+            <section id="power-menu" class="power-menu" hidden>
+                <h3>Güç menüsü</h3>
+                <button data-action="restart">↻ Yeniden başlat</button>
+                <button data-action="lock">▣ Ekranı kilitle</button>
+                <button data-action="power-close">× Menüyü kapat</button>
+            </section>
+
+
+            <!-- BİLDİRİMLER -->
+
+            <div id="notification-area"
+                 class="notification-area"
+                 aria-live="polite">
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             4. GÖREV ÇUBUĞU
+        ====================================== -->
+
+        <footer class="taskbar">
+
+            <div class="taskbar-left">
+
+                <button class="taskbar-start"
+                        id="start-button"
+                        title="Başlat">
+                    <span>K</span>
+                </button>
+
+                <button class="taskbar-app"
+                        data-open="assistant"
+                        title="KURİON AI">
+                    ✧
+                </button>
+
+                <button class="taskbar-app"
+                        data-open="files"
+                        title="Dosyalar">
+                    📁
+                </button>
+
+                <button class="taskbar-app"
+                        data-open="terminal"
+                        title="Terminal">
+                    ⌘
+                </button>
+
+                <button class="taskbar-app"
+                        data-open="notes"
+                        title="Notlar">
+                    📝
+                </button>
+
+            </div>
+
+
+            <div class="taskbar-center">
+                <span id="taskbar-active-app">KURİON OS</span>
+            </div>
+
+
+            <div class="taskbar-right">
+
+                <span id="taskbar-network">◉</span>
+                <span id="taskbar-volume">🔊</span>
+
+                <div class="taskbar-clock">
+                    <strong id="taskbar-clock">14:40</strong>
+                    <span id="taskbar-date">15.11.2026</span>
+                </div>
+
+            </div>
+
         </footer>
 
     </main>
 
+
+    <!-- =====================================
+         5. KİLİT EKRANI
+    ====================================== -->
+
+    <section id="lock-screen" class="lock-screen" hidden>
+
+        <div class="lock-content">
+            <div class="lock-logo">K</div>
+
+            <h1>KURİON OS</h1>
+            <p>Sistem kilitlendi.</p>
+
+            <div id="lock-clock">14:40</div>
+            <div id="lock-date">15 Kasım 2026</div>
+
+            <button id="unlock-button" class="primary-button">
+                Sisteme geri dön →
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- JAVASCRIPT DOSYASI -->
     <script src="script.js"></script>
+
 </body>
 </html>
